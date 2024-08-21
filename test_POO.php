@@ -3,10 +3,15 @@
 // nommer l'objet; ici "Ordinateur"
 Class Ordinateur{
 
-// Attribuer un ATTRIBUT "public, private ou protected" selon le besoin
+// Attribuer un ATTRIBUT "public, private ou protected" selon le besoin. L'utiliser s'appelle l'ENCAPSULATION
 // L'attribut est toujours lié à un élément particulier qu'il faut nommer
   private $_marque;
-
+  public function __construct($marque){
+    $this->_marque=$marque;
+  }
+  public function getMarque(){
+    return $this->_marque;
+  }
 // Si l'attribut est PRIVE, il est uniquement accessible depuis sa classe où il est déclaré
   private $_modele;
 
@@ -24,9 +29,12 @@ Class Ordinateur{
     $this->_statut = 1;
 }
 }
-$poste = new Ordinateur();
+// Pour ajouter d'autres objet (ordinateur) avec $poste = new ...(ordinateur)
+$poste = new Ordinateur("Samsung"); //Créé un autre Ordinateur de marque Samsung
 
 // On appelle avec "$poste" la function (allumer) d'une classe "ici l'ordinateur"
 $poste->allumer();
 
 // Si l'attribut est protégé, il est uniquement accessible par sa classe et les sous-classes
+
+echo $poste->getMarque(); // Affiche Samsung
