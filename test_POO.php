@@ -6,7 +6,7 @@ Class Ordinateur{
 // Attribuer un ATTRIBUT "public, private ou protected" selon le besoin. L'utiliser s'appelle l'ENCAPSULATION
 // L'attribut est toujours lié à un élément particulier qu'il faut nommer
   private $_marque;
-  public function __construct($marque){
+  public function __construct($marque){ // __construct permet de placer une valeur dans un attribut
     $this->_marque=$marque;
   }
   public function getMarque(){
